@@ -1,0 +1,167 @@
+body {
+  background-color: black;
+}
+
+.characters_search_bar {
+  position: absolute;
+  top: 370px;
+  left: 200px;
+  width: 600px;
+  height: 60px;
+  background-color: black;
+  color: white;
+  font-size: 30px;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  outline: none;
+  border: 1px thin white;
+  border-radius: 5px;
+  animation-name: opacity;
+  animation-duration: 1s;
+}
+
+.characters_search_bar::placeholder {
+  color: white;
+}
+
+.characters_hero img {
+  height: 450px;
+  width: 100%;
+  object-fit: cover;
+  object-position: top;
+  position: relative;
+  animation-name: opacity;
+  animation-duration: 1s;
+}
+
+@keyframes opacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.picture_container {
+  width: 1280px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.characters_container {
+  width: 200px;
+  height: 200px;
+  /* border: 2px solid yellow; */
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 10px;
+}
+
+.characters_picture_name_dontshow {
+  width: 200px;
+  margin-left: -210px;
+  margin-top: 100px;
+  height: 22px;
+  background-color: white;
+  border: 1px solid black;
+  box-sizing: border-box;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Roboto", sans-serif;
+  animation: unpop;
+  animation-duration: 0.3s;
+  z-index: 1;
+}
+
+@keyframes unpop {
+  from {
+    margin-left: 0px;
+    opacity: 0;
+  }
+  to {
+    margin-left: -200px;
+    opacity: 1;
+  }
+}
+
+.characters_picture_name_showme {
+  width: 200px;
+  margin-left: 0px;
+  margin-top: 100px;
+  height: 22px;
+  background-color: white;
+  border: 1px solid black;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Roboto", sans-serif;
+  animation: pop;
+  animation-duration: 0.2s;
+  z-index: 1;
+}
+
+@keyframes pop {
+  from {
+    margin-left: -200px;
+    opacity: 0;
+  }
+  to {
+    margin-left: Opx;
+    opacity: 1;
+  }
+}
+
+.characters_picture {
+  width: 200px;
+  height: 200px;
+  background-color: white;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid rgb(0, 0, 0);
+  box-sizing: border-box;
+  z-index: 0;
+  cursor: pointer;
+  animation-name: opacity;
+  animation-duration: 1s;
+}
+
+.characters_picture:hover {
+  -webkit-animation: spin 0.2s linear;
+  -moz-animation: spin 0.2s linear;
+  animation: spin 0.2s linear;
+}
+
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.character_side {
+  width: 200px;
+  height: 200px;
+  background-color: blue;
+}

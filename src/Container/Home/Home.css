@@ -1,0 +1,14 @@
+.picture_container {
+  /* border: rgb(255, 0, 0) 2px solid; */
+  width: 1280px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.home_picture {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid black;
+}
