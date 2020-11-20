@@ -1,0 +1,44 @@
+.picture_container {
+  width: 1280px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.comics_container {
+  width: 200px;
+  height: 280px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 10px;
+}
+
+.comics_picture {
+  width: 200px;
+  height: 280px;
+  background-color: white;
+  object-fit: cover;
+  border: 2px solid rgb(0, 0, 0);
+  box-sizing: border-box;
+  z-index: 0;
+  cursor: pointer;
+  animation-name: opacity;
+  animation-duration: 1s;
+}
+
+.comics_picture_back {
+  opacity: 0.3;
+  width: 200px;
+  height: 280px;
+  background-color: white;
+  object-fit: cover;
+  border: 2px solid rgb(0, 0, 0);
+  box-sizing: border-box;
+  z-index: 0;
+  cursor: pointer;
+  animation-name: opacity;
+  animation-duration: 1s;
+}

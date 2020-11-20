@@ -6,7 +6,6 @@ const Pagebar = ({ data, setData }) => {
 
   const handlePrevious = async () => {
     setOffset(offset - 50);
-    console.log(offset);
 
     const response = await axios.get(
       `http://localhost:3000/characters?offset=${offset}`
@@ -16,7 +15,7 @@ const Pagebar = ({ data, setData }) => {
 
   const handleNext = async () => {
     setOffset(offset + 50);
-    console.log(offset);
+
     const response = await axios.get(
       `http://localhost:3000/characters?offset=${offset}`
     );

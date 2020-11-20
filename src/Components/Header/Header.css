@@ -3,9 +3,30 @@ header {
   height: 70px;
   background-color: #ed161f;
   display: flex;
-  position: sticky;
+  position: sticky !important;
   top: 0;
-  z-index: 2;
+  z-index: 4;
+  opacity: 1;
+  animation-name: opacityhead;
+  animation-duration: 4s;
+}
+
+.backheader {
+  background-color: #70d9f8;
+  position: sticky !important;
+  top: 0;
+  z-index: 4;
+}
+
+@keyframes opacityhead {
+  from {
+    width: 0%;
+    opacity: 0;
+  }
+  to {
+    width: 100%;
+    opacity: 1;
+  }
 }
 
 .header_logo {
@@ -15,12 +36,13 @@ header {
 }
 
 .header_category {
-  width: 600px;
+  padding-left: 70px;
   height: 70px;
   display: flex;
   justify-content: space-around;
   align-items: center;
   margin-left: 600px;
+  z-index: 5;
 }
 
 .header_characters {

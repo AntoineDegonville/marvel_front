@@ -10,14 +10,14 @@ function App() {
     <Router>
       <Header></Header>
       <Switch>
-        <Route path="/home">
-          <Home></Home>
-        </Route>
         <Route path="/characters">
           <Characters></Characters>
         </Route>
         <Route path="/comics">
           <Comics></Comics>
+        </Route>
+        <Route path="/">
+          <Home></Home>
         </Route>
       </Switch>
     </Router>

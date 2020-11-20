@@ -54,7 +54,6 @@ body {
 .characters_container {
   width: 200px;
   height: 200px;
-  /* border: 2px solid yellow; */
   display: flex;
   align-items: center;
   position: relative;
@@ -66,12 +65,12 @@ body {
   width: 200px;
   margin-left: -210px;
   margin-top: 100px;
-  height: 22px;
-  background-color: white;
+
+  background-color: rgb(255, 255, 255);
+  color: white;
   border: 1px solid black;
   box-sizing: border-box;
-  border-bottom-right-radius: 10px;
-  border-top-right-radius: 10px;
+  border-radius: 10px;
   position: absolute;
   display: flex;
   align-items: center;
@@ -97,19 +96,19 @@ body {
   width: 200px;
   margin-left: 0px;
   margin-top: 100px;
-  height: 22px;
-  background-color: white;
+  /* height: 22px; */
   border: 1px solid black;
-  border-bottom-right-radius: 10px;
-  border-top-right-radius: 10px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
   position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: "Roboto", sans-serif;
   animation: pop;
-  animation-duration: 0.2s;
+  animation-duration: 0.3s;
   z-index: 1;
+  cursor: pointer;
 }
 
 @keyframes pop {
@@ -164,4 +163,31 @@ body {
   width: 200px;
   height: 200px;
   background-color: blue;
+}
+
+.loaderback {
+  width: 2000px;
+  height: 2000px;
+  background-color: #70d9f8;
+}
+.loaderspider {
+  position: absolute;
+  right: 0;
+  animation-name: spider;
+  animation-duration: 5s;
+  opacity: 0;
+}
+
+@keyframes spider {
+  from {
+    opacity: 1;
+    left: -200px;
+  }
+  to {
+    opacity: 0;
+    left: 2280px;
+  }
+  to {
+    opacity: 1;
+  }
 }
