@@ -10,13 +10,6 @@ const Comics = () => {
   const [isloading, setIsloading] = useState(false);
   console.log(data.results);
 
-  const newTab = () => {
-    let tab = [];
-    for (let i = 0; i < 60; i++) {
-      tab.push(false);
-    }
-    return tab;
-  };
   const [pop, setPop] = useState(newTab());
 
   const fetchData = async () => {

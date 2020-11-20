@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import ReactCardFlip from "react-card-flip";
 import "../ComicsFlip/ComicsFlip.css";
-import PagebarComics from "../PagebarComics/PagebarComics";
 
 const Comics = ({ data, setData }) => {
   console.log(data);
