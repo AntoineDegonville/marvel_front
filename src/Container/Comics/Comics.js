@@ -10,8 +10,6 @@ const Comics = () => {
   const [isloading, setIsloading] = useState(false);
   console.log(data.results);
 
-  const [pop, setPop] = useState(newTab());
-
   const fetchData = async () => {
     const response = await axios.get("http://localhost:3000/comics");
     setData(response.data.data);
