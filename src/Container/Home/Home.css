@@ -12,3 +12,28 @@
   border-radius: 50%;
   border: 2px solid black;
 }
+
+.comingsoon {
+  height: 90%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  animation-name: comingpop;
+  animation-duration: 4s;
+}
+
+@keyframes comingpop {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.comingsoon img {
+  width: 600px;
+  height: 120px;
+  object-fit: cover;
+}

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "../Home/Home.css";
 import axios from "axios";
 import Loaderspider from "../../assets/img/loaderspider.gif";
+import Comingsoon from "../../assets/img/comingsoon.png";
 
 const Home = () => {
   const [data, setData] = useState([]);
@@ -19,14 +20,19 @@ const Home = () => {
   console.log(data);
 
   return (
-    <div style={{ height: 900 }} className="loaderback">
-      <img
-        className="spiderloader"
-        className="loaderspider"
-        src={Loaderspider}
-        alt=""
-      />
-    </div>
+    <>
+      <div style={{ height: 900 }} className="loaderback">
+        <img
+          className="spiderloader"
+          className="loaderspider"
+          src={Loaderspider}
+          alt=""
+        />
+        <div className="comingsoon">
+          <img src={Comingsoon} alt="" />
+        </div>
+      </div>
+    </>
   );
   // !isloading ? (
   //   // <MeteorRainLoading
