@@ -1,0 +1,27 @@
+.description_container {
+  width: 1280px;
+  height: 600px;
+  margin: 50px auto;
+  /* border: 2px solid white; */
+  display: flex;
+  padding: 10px;
+}
+
+h1 {
+  color: white;
+}
+p {
+  color: white;
+}
+
+.description_picture {
+  width: 500px;
+  height: 500px;
+}
+
+.description_section {
+  width: 600px;
+  height: 600px;
+  margin-left: 50px;
+  position: relative;
+}

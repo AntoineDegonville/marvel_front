@@ -4,12 +4,18 @@ import Home from "./Container/Home/Home";
 import Characters from "./Container/Characters/Characters";
 import Comics from "./Container/Comics/Comics";
 import Header from "./Components/Header/Header";
+import Description from "./Container/Description/Description";
+import { useState } from "react";
 
 function App() {
+  const [clicked, setClicked] = useState(false);
   return (
     <Router>
-      <Header></Header>
+      <Header clicked={clicked} setClicked={setClicked}></Header>
       <Switch>
+        <Route path="/characters/:id">
+          <Description></Description>
+        </Route>
         <Route path="/characters">
           <Characters></Characters>
         </Route>
@@ -17,7 +23,7 @@ function App() {
           <Comics></Comics>
         </Route>
         <Route path="/">
-          <Home></Home>
+          <Home setClicked={setClicked}></Home>
         </Route>
       </Switch>
     </Router>

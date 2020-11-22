@@ -1,38 +1,40 @@
 import React, { useState } from "react";
 import "../Pagebar/Pagebar.css";
 import axios from "axios";
+import Next from "../../assets/img/next.png";
+import Previous from "../../assets/img/previous.png";
 const Pagebar = ({ data, setData }) => {
   const [offset, setOffset] = useState(0);
 
   const handlePrevious = async () => {
-    setOffset(offset - 50);
+    let theOffset = offset - 50;
+    setOffset(theOffset);
 
     const response = await axios.get(
-      `http://localhost:3000/characters?offset=${offset}`
+      `https://marvelbackend.herokuapp.com/characters?offset=${theOffset}`
     );
     setData(response.data);
   };
 
   const handleNext = async () => {
-    setOffset(offset + 50);
+    let theOffset = offset + 50;
+    setOffset(theOffset);
 
     const response = await axios.get(
-      `http://localhost:3000/characters?offset=${offset}`
+      `https://marvelbackend.herokuapp.com/characters?offset=${theOffset}`
     );
     setData(response.data);
   };
   return (
     <div className="pagebar_bar">
-      <button
-        style={{ display: offset > 0 ? "flex" : "none" }}
-        type="submit"
+      <img
+        className="previous"
+        style={{ visibility: offset >= 50 ? "visible" : "hidden" }}
         onClick={handlePrevious}
-      >
-        Previous
-      </button>
-      <button type="submit" onClick={handleNext}>
-        Next
-      </button>
+        src={Previous}
+        alt=""
+      />
+      <img onClick={handleNext} className="next" src={Next} alt="" />
     </div>
   );
 };

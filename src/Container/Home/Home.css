@@ -1,5 +1,4 @@
 .picture_container {
-  /* border: rgb(255, 0, 0) 2px solid; */
   width: 1280px;
   display: flex;
   flex-wrap: wrap;
@@ -13,17 +12,27 @@
   border: 2px solid black;
 }
 
-.comingsoon {
-  height: 90%;
-  align-items: center;
+.diventer {
+  padding-top: 300px;
   display: flex;
+  width: 100%;
+  height: 200px;
   justify-content: center;
+  align-items: center;
+  z-index: 10;
+  position: absolute;
+}
+
+.enter {
   margin: 0 auto;
-  animation-name: comingpop;
+  width: 250px;
+  height: 140px;
+  object-fit: cover;
+  animation-name: enter;
   animation-duration: 4s;
 }
 
-@keyframes comingpop {
+@keyframes enter {
   from {
     opacity: 0;
   }
@@ -31,9 +40,9 @@
     opacity: 1;
   }
 }
-
-.comingsoon img {
-  width: 600px;
-  height: 120px;
-  object-fit: cover;
+.enter:hover {
+  /* cursor: pointer; */
+  margin: 0 auto;
+  width: 300px;
+  z-index: 9;
 }

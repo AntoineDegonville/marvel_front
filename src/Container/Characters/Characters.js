@@ -5,12 +5,17 @@ import { MeteorRainLoading } from "react-loadingg";
 import Hero from "../../assets/img/hero.jpg";
 import Pagebar from "../../Components/Pagebar/Pagebar";
 import Loaderspider from "../../assets/img/loaderspider.gif";
+import Searchbar from "../../Components/Searchbar/Searchbar";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const [data, setData] = useState([]);
   const [isloading, setIsloading] = useState(false);
+  const [searchCharacter, setSearchCharacter] = useState(); // Récupère la valeur de la barre de recherche
+  const [idPicture, setIdPicture] = useState();
 
-  //   Recuperation uniquement des personnages avec images.
+  console.log("id :", idPicture);
+
   console.log(data);
   const newTab = () => {
     let tab = [];
@@ -22,7 +27,9 @@ const Home = () => {
   const [pop, setPop] = useState(newTab());
 
   const fetchData = async () => {
-    const response = await axios.get("http://localhost:3000/characters");
+    const response = await axios.get(
+      "https://marvelbackend.herokuapp.com/characters"
+    );
     setData(response.data);
     setIsloading(true);
   };
@@ -30,7 +37,6 @@ const Home = () => {
   useEffect(() => {
     fetchData();
   }, []);
-  //   console.log(data.results);
 
   return !isloading ? (
     <MeteorRainLoading
@@ -38,18 +44,67 @@ const Home = () => {
       size="large"
       speed="1"
     ></MeteorRainLoading>
+  ) : !searchCharacter ? (
+    <div>
+      <div className="characters_hero">
+        <img src={Hero} alt="" />
+        <Searchbar
+          data={data}
+          setData={setData}
+          setSearchCharacter={setSearchCharacter}
+        />
+      </div>
+      <div className="picture_container">
+        {data?.results.map((item, index) => {
+          return (
+            <div>
+              <div className="characters_container">
+                <div
+                  key={index}
+                  onMouseEnter
+                  className={
+                    pop[index]
+                      ? "characters_picture_name_showme"
+                      : "characters_picture_name_dontshow"
+                  }
+                >
+                  {item.name}
+                </div>
+                <Link to={"/characters/" + idPicture}>
+                  <img
+                    onMouseEnter={() => {
+                      let newTabpop = [...pop];
+                      newTabpop[index] = true;
+                      setPop(newTabpop);
+                      setIdPicture(data.results[index].id);
+                    }}
+                    onMouseLeave={() => {
+                      setPop(newTab());
+                    }}
+                    className="characters_picture"
+                    src={item.thumbnail.path + "." + item.thumbnail.extension}
+                    alt=""
+                  />
+                </Link>
+              </div>
+            </div>
+          );
+        })}
+        <Pagebar data={data} setData={setData}></Pagebar>
+      </div>
+    </div>
   ) : (
     <div>
       <div className="characters_hero">
         <img src={Hero} alt="" />
-        <input
-          className="characters_search_bar"
-          placeholder="Find your character..."
-          type="text"
+        <Searchbar
+          data={data}
+          setData={setData}
+          setSearchCharacter={setSearchCharacter}
         />
       </div>
       <div className="picture_container">
-        {data.results.map((item, index) => {
+        {searchCharacter.map((item, index) => {
           return (
             <div>
               <div className="characters_container">

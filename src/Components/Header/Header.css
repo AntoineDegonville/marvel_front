@@ -44,8 +44,6 @@ header {
   align-items: center;
   margin-left: 600px;
   z-index: 5;
-  display: none;
-  /* REMETTRE DISPLAY */
 }
 
 .header_characters {
@@ -79,8 +77,6 @@ header {
   display: flex;
   align-items: center;
   margin-left: 100px;
-  display: none;
-  /* A REMETTRE */
 }
 
 .header_fanpage img {

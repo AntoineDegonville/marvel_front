@@ -1,0 +1,20 @@
+.relative_comics_container {
+  width: 495px;
+  height: 250px;
+  display: flex;
+  overflow-x: scroll;
+  flex-wrap: wrap;
+  position: absolute;
+  bottom: 100px;
+  left: 0px;
+}
+
+.relative_comics_images {
+  display: flex;
+}
+
+.relative_comics_images > img {
+  height: 250px;
+  object-fit: cover;
+  margin-right: 5px;
+}

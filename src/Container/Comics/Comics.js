@@ -11,7 +11,9 @@ const Comics = () => {
   console.log(data.results);
 
   const fetchData = async () => {
-    const response = await axios.get("http://localhost:3000/comics");
+    const response = await axios.get(
+      "https://marvelbackend.herokuapp.com/comics"
+    );
     setData(response.data.data);
     setIsloading(true);
   };
@@ -31,11 +33,6 @@ const Comics = () => {
       <div>
         <div className="characters_hero">
           <img src={Hero} alt="" />
-          <input
-            className="characters_search_bar"
-            placeholder="Find your comics..."
-            type="text"
-          />
         </div>
       </div>
       <ComicsFlip data={data}></ComicsFlip>
