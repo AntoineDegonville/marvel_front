@@ -8,7 +8,7 @@
 
 This website is made with React.
 It is an exercise for using Marvel API.
-The response of the API is a little slow, so, it's loading..but don't worry it's will work ;) 
+The response of the API is a little slow, so, it's loading..but don't worry it work ;) 
 
 
 **MARVEL made at [Le Reacteur](https://www.lereacteur.io/) Bootcamp.**  
