@@ -4,9 +4,9 @@ import axios from "axios";
 import { MeteorRainLoading } from "react-loadingg";
 import Hero from "../../assets/img/hero.jpg";
 import Pagebar from "../../Components/Pagebar/Pagebar";
-import Loaderspider from "../../assets/img/loaderspider.gif";
 import Searchbar from "../../Components/Searchbar/Searchbar";
 import { Link } from "react-router-dom";
+import nopic from "../../assets/img/imagenotfound.png";
 
 const Home = () => {
   const [data, setData] = useState([]);
@@ -14,9 +14,6 @@ const Home = () => {
   const [searchCharacter, setSearchCharacter] = useState(); // Récupère la valeur de la barre de recherche
   const [idPicture, setIdPicture] = useState();
 
-  console.log("id :", idPicture);
-
-  console.log(data);
   const newTab = () => {
     let tab = [];
     for (let i = 0; i < 60; i++) {
@@ -57,7 +54,7 @@ const Home = () => {
       <div className="picture_container">
         {data?.results.map((item, index) => {
           return (
-            <div>
+            <div key={index}>
               <div className="characters_container">
                 <div
                   key={index}
@@ -82,7 +79,11 @@ const Home = () => {
                       setPop(newTab());
                     }}
                     className="characters_picture"
-                    src={item.thumbnail.path + "." + item.thumbnail.extension}
+                    src={
+                      item.thumbnail.path.includes("available")
+                        ? nopic
+                        : item.thumbnail.path + "." + item.thumbnail.extension
+                    }
                     alt=""
                   />
                 </Link>
@@ -106,7 +107,7 @@ const Home = () => {
       <div className="picture_container">
         {searchCharacter.map((item, index) => {
           return (
-            <div>
+            <div key={index}>
               <div className="characters_container">
                 <div
                   key={index}

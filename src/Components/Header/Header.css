@@ -3,6 +3,7 @@ header {
   height: 70px;
   background-color: #ed161f;
   display: flex;
+  justify-content: space-around;
   position: sticky !important;
   top: 0;
   z-index: 4;

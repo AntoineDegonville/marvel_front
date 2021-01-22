@@ -10,6 +10,7 @@ const Description = () => {
   const { id } = useParams();
   const [data, setData] = useState();
   const [isloading, setIsloading] = useState(false);
+  console.log("hulk");
 
   const fetchData = async () => {
     const response = await axios.get(

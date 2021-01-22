@@ -3,11 +3,10 @@ import "../Header/Header.css";
 import Logo from "../../assets/img/Logo.png";
 import Characters from "../../assets/img/characters.png";
 import Comics from "../../assets/img/comics.png";
-import Fanpage from "../../assets/img/fanpage.png";
 import { Link } from "react-router-dom";
 
 const Header = ({ clicked, setClicked }) => {
-  console.log(clicked);
+  // console.log(clicked);
   return (
     <div className="backheader">
       <header>
@@ -41,13 +40,6 @@ const Header = ({ clicked, setClicked }) => {
               />
             </Link>
           </div>
-        </div>
-        <div className="header_fanpage">
-          <img
-            style={{ visibility: clicked === true ? "visible" : "hidden" }}
-            src={Fanpage}
-            alt=""
-          />
         </div>
       </header>
     </div>

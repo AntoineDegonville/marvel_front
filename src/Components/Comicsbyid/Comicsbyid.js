@@ -7,7 +7,6 @@ const Comicsbyid = () => {
   const [comics, setComics] = useState();
   const { id } = useParams();
   const [isloading, setIsloading] = useState(false);
-  console.log(comics);
 
   const fetchData = async () => {
     const response = await axios.get(
@@ -29,9 +28,9 @@ const Comicsbyid = () => {
     <div className="relative_comics_container">
       <div className="relative_comics_images">
         {comics.map((item, index) => {
-          console.log(item.id);
           return (
             <img
+              key={index}
               src={item.images[0]?.path + "." + item.images[0]?.extension}
               alt=""
             />

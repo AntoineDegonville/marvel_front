@@ -12,7 +12,6 @@ const newTab = () => {
 
 const Comics = ({ data }) => {
   const [isFlipped, setIsFlipped] = useState(newTab());
-  // const [pop, setPop] = useState(newTab());
 
   const handleClick = (index, noflip) => {
     const newTabFlip = newTab();
@@ -28,7 +27,7 @@ const Comics = ({ data }) => {
         {data.results.map((item, index) => {
           console.log();
           return (
-            <div>
+            <div key={index}>
               <div className="comics_container">
                 <div>{item.name}</div>
                 <ReactCardFlip

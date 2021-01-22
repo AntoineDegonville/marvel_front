@@ -4,7 +4,6 @@ import axios from "axios";
 
 const Searchbar = ({ data, setData, setSearchCharacter }) => {
   const [search, setSearch] = useState(); // valeur de l'input
-  const [datafound, setDatafound] = useState();
 
   const handleSearch = async (e) => {
     const response = await axios.get(
